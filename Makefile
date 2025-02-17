@@ -1,4 +1,4 @@
-.PHONY: test build run clean fmt vet
+.PHONY: test build run clean fmt vet bench
 
 # Run all tests in the project
 test:
@@ -19,6 +19,10 @@ fmt:
 # Run go vet to catch potential issues
 vet:
 	go vet ./...
+
+# Run Benchmark test
+bench:
+	go test -bench=. -benchmem
 
 # Clean up generated binaries
 clean:
